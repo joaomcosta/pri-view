@@ -1,0 +1,74 @@
+---
+views:
+  - id : "q1count"
+    file : "q1count.sql"
+    parameters :
+      type : "COUNT"
+      colNumber : 2
+      epsilon : 0.1
+      lowerBound : 0
+      upperBound : 0
+    description : "Billed, shipped, and returned business"
+    permissions :
+      - id : "analyst1"
+      - id : "analyst2"
+  - id : "q1sum"
+    file : "q1sum.sql"
+    parameters :
+      type : "SUM"
+      colNumber : 2
+      epsilon : 0.1
+      lowerBound : 1
+      upperBound : 50
+    description : "Billed, shipped, and returned business"
+    permissions :
+      - id : "analyst1"
+      - id : "analyst2"
+  - id : "q1avg"
+    file : "q1avg.sql"
+    parameters :
+      type : "AVG"
+      colNumber: 2
+      epsilon : 0.1
+      lowerBound : 1
+      upperBound : 50
+    description : "Billed, shipped, and returned business"
+    permissions :
+      - id: "analyst1"
+      - id: "analyst2"
+  - id: "q4"
+    file: "q4.sql"
+    parameters:
+      type: "COUNT"
+      colNumber: 1
+      epsilon: 0.1
+      lowerBound: 0
+      upperBound: 0
+    description: "Priority system status and customer satisfaction"
+    permissions:
+      - id: "analyst1"
+      - id: "analyst2"
+  - id: "q16"
+    file: "q16.sql"
+    parameters:
+      type: "COUNT"
+      colNumber: 3
+      epsilon: 0.1
+      lowerBound: 0
+      upperBound: 0
+    description: "Suppliers capable of supplying various part types"
+    permissions:
+      - id: "analyst1"
+      - id: "analyst2"
+  - id: "q21"
+    file: "q21.sql"
+    parameters:
+      type: "COUNT"
+      colNumber: 1
+      epsilon: 0.1
+      lowerBound: 0
+      upperBound: 0
+    description: "Suppliers with late shipping times for required parts"
+    permissions:
+      - id: "analyst1"
+      - id: "analyst2"

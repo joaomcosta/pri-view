@@ -1,0 +1,103 @@
+---
+databases:
+  - database: "tpch"
+    dialect: "postgresql"
+    namespace: "public"
+    tables:
+      - table: "part"
+        isPublic: true
+        columns:
+          - name: "p_partkey"
+            maxFreq: 1
+          - name: "p_name"
+          - name: "p_mfgr"
+          - name: "p_brand"
+          - name: "p_type"
+          - name: "p_size"
+          - name: "p_container"
+          - name: "p_retailprice"
+          - name: "p_comment"
+      - table: "supplier"
+        isPublic: false
+        columns:
+          - name: "s_suppkey"
+            maxFreq: 1
+          - name: "s_name"
+          - name: "s_address"
+          - name: "s_nationkey"
+            maxFreq: 438
+          - name: "s_phone"
+          - name: "s_acctbal"
+          - name: "s_comment"
+      - table: "partsupp"
+        isPublic: false
+        columns:
+          - name: "ps_partkey"
+            maxFreq: 4
+          - name: "ps_suppkey"
+            maxFreq: 80
+          - name: "ps_availqty"
+          - name: "ps_supplycost"
+          - name: "ps_comment"
+      - table: "customer"
+        isPublic: false
+        columns:
+          - name: "c_custkey"
+            maxFreq: 1
+          - name: "c_name"
+          - name: "c_address"
+          - name: "c_nationkey"
+          - name: "c_phone"
+          - name: "c_acctbal"
+          - name: "c_mktsegment"
+          - name: "c_comment"
+      - table: "orders"
+        isPublic: false
+        columns:
+          - name: "o_orderkey"
+            maxFreq: 1
+          - name: "o_custkey"
+            maxFreq: 41
+          - name: "o_orderstatus"
+          - name: "o_totalprice"
+          - name: "o_orderdate"
+          - name: "o_orderpriority"
+          - name: "o_clerk"
+          - name: "o_shippriority"
+          - name: "o_comment"
+      - table: "lineitem"
+        isPublic: false
+        columns:
+          - name: "l_orderkey"
+            maxFreq: 7
+          - name: "l_partkey"
+          - name: "l_suppkey"
+            maxFreq: 694
+          - name: "l_linenumber"
+          - name: "l_quantity"
+          - name: "l_extendedprice"
+          - name: "l_discount"
+          - name: "l_tax"
+          - name: "l_returnflag"
+          - name: "l_linestatus"
+          - name: "l_shipdate"
+          - name: "l_commitdate"
+          - name: "l_receiptdate"
+          - name: "l_shipinstruct"
+          - name: "l_shipmode"
+          - name: "l_comment"
+      - table: "nation"
+        isPublic: true
+        columns:
+          - name: "n_nationkey"
+            maxFreq: 1
+          - name: "n_name"
+          - name: "n_regionkey"
+          - name: "n_comment"
+      - table: "region"
+        isPublic: true
+        columns:
+          - name: "r_regionkey"
+            maxFreq: 1
+          - name: "r_name"
+          - name: "r_comment"
